@@ -1,0 +1,525 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: OpenGLAgain
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target Main
+
+
+#############################################
+# Order-only phony target for Main
+
+build cmake_object_order_depends_target_Main: phony || cmake_object_order_depends_target_glfw
+
+build CMakeFiles/Main.dir/src/main.cpp.o: CXX_COMPILER__Main_Debug /Users/mystic/CLionProjects/OpenGLAgain/src/main.cpp || cmake_object_order_depends_target_Main
+  DEP_FILE = CMakeFiles/Main.dir/src/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -std=gnu++14
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glad/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/Main.dir
+  OBJECT_FILE_DIR = CMakeFiles/Main.dir/src
+
+build CMakeFiles/Main.dir/src/Classes/glad.c.o: C_COMPILER__Main_Debug /Users/mystic/CLionProjects/OpenGLAgain/src/Classes/glad.c || cmake_object_order_depends_target_Main
+  DEP_FILE = CMakeFiles/Main.dir/src/Classes/glad.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glad/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks
+  OBJECT_DIR = CMakeFiles/Main.dir
+  OBJECT_FILE_DIR = CMakeFiles/Main.dir/src/Classes
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Main
+
+
+#############################################
+# Link the executable Main
+
+build Main: CXX_EXECUTABLE_LINKER__Main_Debug CMakeFiles/Main.dir/src/main.cpp.o CMakeFiles/Main.dir/src/Classes/glad.c.o | Lib/glfw-3-3-8/src/libglfw3.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd || Lib/glfw-3-3-8/src/libglfw3.a
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2
+  LINK_LIBRARIES = Lib/glfw-3-3-8/src/libglfw3.a  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL.tbd  -framework Cocoa  -framework IOKit  -framework CoreFoundation
+  OBJECT_DIR = CMakeFiles/Main.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Main
+  TARGET_PDB = Main.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/mystic/CLionProjects/OpenGLAgain -B/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/mystic/CLionProjects/OpenGLAgain/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for uninstall
+
+build Lib/glfw-3-3-8/uninstall: phony Lib/glfw-3-3-8/CMakeFiles/uninstall
+
+
+#############################################
+# Utility command for edit_cache
+
+build Lib/glfw-3-3-8/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8 && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Lib/glfw-3-3-8/edit_cache: phony Lib/glfw-3-3-8/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Lib/glfw-3-3-8/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8 && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/mystic/CLionProjects/OpenGLAgain -B/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/rebuild_cache: phony Lib/glfw-3-3-8/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Lib/glfw-3-3-8/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Lib/glfw-3-3-8/CMakeFiles/install.util: CUSTOM_COMMAND Lib/glfw-3-3-8/all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8 && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/install: phony Lib/glfw-3-3-8/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Lib/glfw-3-3-8/CMakeFiles/install/local.util: CUSTOM_COMMAND Lib/glfw-3-3-8/all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8 && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/install/local: phony Lib/glfw-3-3-8/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Lib/glfw-3-3-8/CMakeFiles/install/strip.util: CUSTOM_COMMAND Lib/glfw-3-3-8/all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8 && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/install/strip: phony Lib/glfw-3-3-8/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for Lib/glfw-3-3-8/CMakeFiles/uninstall
+
+build Lib/glfw-3-3-8/CMakeFiles/uninstall | ${cmake_ninja_workdir}Lib/glfw-3-3-8/CMakeFiles/uninstall: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8 && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/cmake_uninstall.cmake
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for update_mappings
+
+build Lib/glfw-3-3-8/src/update_mappings: phony Lib/glfw-3-3-8/src/CMakeFiles/update_mappings
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/context.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/init.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/input.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/monitor.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/vulkan.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/window.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/cocoa_init.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/cocoa_window.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/cocoa_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/posix_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/nsgl_context.m || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/egl_context.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+build Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_Debug /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -D_GLFW_USE_CONFIG_H
+  DEP_FILE = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2 -fPIC -Wall -std=gnu99
+  INCLUDES = -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/include -I/Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/src -I/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  OBJECT_FILE_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Link the static library Lib/glfw-3-3-8/src/libglfw3.a
+
+build Lib/glfw-3-3-8/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/context.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/init.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/input.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/monitor.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/vulkan.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/window.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_init.m.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_window.m.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/cocoa_time.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/posix_thread.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/nsgl_context.m.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/egl_context.c.o Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir/osmesa_context.c.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=12.2
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Lib/glfw-3-3-8/src/CMakeFiles/glfw.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = Lib/glfw-3-3-8/src/libglfw3.a
+  TARGET_PDB = glfw3.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build Lib/glfw-3-3-8/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Lib/glfw-3-3-8/src/edit_cache: phony Lib/glfw-3-3-8/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Lib/glfw-3-3-8/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/mystic/CLionProjects/OpenGLAgain -B/Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/src/rebuild_cache: phony Lib/glfw-3-3-8/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Lib/glfw-3-3-8/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Lib/glfw-3-3-8/src/CMakeFiles/install.util: CUSTOM_COMMAND Lib/glfw-3-3-8/src/all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/src/install: phony Lib/glfw-3-3-8/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Lib/glfw-3-3-8/src/CMakeFiles/install/local.util: CUSTOM_COMMAND Lib/glfw-3-3-8/src/all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/src/install/local: phony Lib/glfw-3-3-8/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Lib/glfw-3-3-8/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND Lib/glfw-3-3-8/src/all
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Lib/glfw-3-3-8/src/install/strip: phony Lib/glfw-3-3-8/src/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for Lib/glfw-3-3-8/src/CMakeFiles/update_mappings
+
+build Lib/glfw-3-3-8/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}Lib/glfw-3-3-8/src/CMakeFiles/update_mappings: CUSTOM_COMMAND
+  COMMAND = cd /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src && "/Users/mystic/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -P /Users/mystic/CLionProjects/OpenGLAgain/Lib/glfw-3-3-8/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+  DESC = Updating gamepad mappings from upstream repository
+
+# =============================================================================
+# Target aliases.
+
+build glfw: phony Lib/glfw-3-3-8/src/libglfw3.a
+
+build libglfw3.a: phony Lib/glfw-3-3-8/src/libglfw3.a
+
+build uninstall: phony Lib/glfw-3-3-8/uninstall
+
+build update_mappings: phony Lib/glfw-3-3-8/src/update_mappings
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug
+
+build all: phony Main Lib/glfw-3-3-8/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8
+
+build Lib/glfw-3-3-8/all: phony Lib/glfw-3-3-8/src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/mystic/CLionProjects/OpenGLAgain/cmake-build-debug/Lib/glfw-3-3-8/src
+
+build Lib/glfw-3-3-8/src/all: phony Lib/glfw-3-3-8/src/libglfw3.a
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../Lib/glfw-3-3-8/CMakeLists.txt ../Lib/glfw-3-3-8/cmake_uninstall.cmake.in ../Lib/glfw-3-3-8/src/CMakeLists.txt ../Lib/glfw-3-3-8/src/glfw3.pc.in ../Lib/glfw-3-3-8/src/glfw3Config.cmake.in ../Lib/glfw-3-3-8/src/glfw_config.h.in /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckIncludeFile.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckLibraryExists.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindOpenGL.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindThreads.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/GNUInstallDirs.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt ../Lib/glfw-3-3-8/CMakeLists.txt ../Lib/glfw-3-3-8/cmake_uninstall.cmake.in ../Lib/glfw-3-3-8/src/CMakeLists.txt ../Lib/glfw-3-3-8/src/glfw3.pc.in ../Lib/glfw-3-3-8/src/glfw3Config.cmake.in ../Lib/glfw-3-3-8/src/glfw_config.h.in /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeDependentOption.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakePackageConfigHelpers.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckCSourceCompiles.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckIncludeFile.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CheckLibraryExists.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-C.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindOpenGL.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindPackageMessage.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/FindThreads.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/GNUInstallDirs.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Internal/CheckSourceCompiles.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-C.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-C.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /Users/mystic/Library/Application$ Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
